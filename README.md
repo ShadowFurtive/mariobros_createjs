@@ -28,8 +28,8 @@ Aparte de la memoria redactada aquí, también está hecho el siguiente [PowerPo
 Para poder usar la librería CreateJS, primer crearemos un [index.html](https://github.com/ShadowFurtive/mariobros_createjs/blob/main/index.html) en el cual inicilizaremos la librería de JavaScript y el archivo .js principal.
 
 ```sh
-        <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-        <script src="main.js"></script>
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="main.js"></script>
 ```
 
 A continuación, crearemos el canvas sobre cual trabajaremos y indicamos que el cargar el body se cargue la función init() que está inicializada en nuestro [main.js](https://github.com/ShadowFurtive/mariobros_createjs/blob/main/main.js).
@@ -78,10 +78,10 @@ Inicialización de los sheets del escenario:
             { "src": "saul_goodman.png", "id": "saul_goodman"},
             { "src": "meme.png", "id": "meme"}
         ];
-        loader = new createjs.LoadQueue(true);
-        // añadimos evento para cargar imagenes.
-        loader.addEventListener("complete", handleComplete);
-        loader.loadManifest(manifest, true, "./img/");
+    loader = new createjs.LoadQueue(true);
+    // añadimos evento para cargar imagenes.
+    loader.addEventListener("complete", handleComplete);
+    loader.loadManifest(manifest, true, "./img/");
 ```
 Una vez cargados los elementos del escenario, se ejecuta la función handleComplete que se encargará de llamar a diferentes funciones para colocar cada elemento en su escenario correspondiente:
 
@@ -156,7 +156,7 @@ A continuación tenemos el sistema de físicas del juego. Es algo muy básico: T
         new createjs.Point(leftX, leftY + mario.image.height-10),
         new createjs.Point(leftX + mario.image.width-10, leftY+mario.image.height-10)
     ];
-   for(var i=0; i<points.length; i++){
+    for(var i=0; i<points.length; i++){
         var objects = stage.getObjectsUnderPoint(points[i].x, points[i].y);
         if(objects.filter((object)=>object.name == "tortuga").length > 0){
             gameOver();
@@ -197,8 +197,8 @@ Para mover el personaje, hacemos uso de la funcion **keydown event**, que es una
                     }
                     break;
             }
-    }
-});
+        }
+    });
 ```
 Como se puede ver, aquí hacemos uso de la librería [TweenJS] para realizar la animación del salto de Mario.
 
@@ -219,6 +219,7 @@ Por último, tenemos la función **GameOver**, que cuando se llama se congela el
 ### Sheets
 Dentro de la carepta [/img](https://github.com/ShadowFurtive/mariobros_createjs/tree/main/img) se pueden ver los sheets usados para crear el escenario. Además, en [/sheets](https://github.com/ShadowFurtive/mariobros_createjs/tree/main/sheets) se pueden ver los sheets completos. 
 Para editar los sheets, se ha hecho uso de la página web [ezgif](https://ezgif.com/)
+
 ### Música
 Dentro de la carpeta [/musica](https://github.com/ShadowFurtive/mariobros_createjs/tree/main/musica) están los sonidos usados para hacer el videojuego. He usado un convertidor online de youtube a ogg para obtener los archivos.
 
